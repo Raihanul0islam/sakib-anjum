@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0D100E;
+  --foreground: #F2F0E9;
+  --surface: #171B18;
+  --surface-hover: #1A201B;
+  --surface-muted: #111412;
+  --accent: #FF4802;
+  --accent-hover: #FF5A1A;
+  --accent-muted: rgba(255, 72, 2, 0.15);
+  --muted: #ABB3A9;
+  --border: #343D35;
+  --border-light: rgba(242, 240, 233, 0.1);
+  --font-brush: var(--font-water-brush), 'Water Brush', cursive;
+  --font-ibm-mono: var(--font-ibm-plex-mono), 'IBM Plex Mono', monospace;
+}
+
+@theme {
+  --breakpoint-sm: 36rem;   /* 576px — tablet starts */
+  --breakpoint-lg: 62rem;   /* 992px — desktop starts */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-muted: var(--surface-muted);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-muted: var(--accent-muted);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-border-light: var(--border-light);
+  --font-sans: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-ibm-mono);
+  --font-brush: var(--font-brush);
+}
+
+html {
+  background-color: var(--background);
+  color: var(--foreground);
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom brush font utility */
+.font-brush {
+  font-family: var(--font-brush);
+}
+
+.font-mono-code {
+  font-family: var(--font-ibm-mono);
+}
+
+/* Subtle glow effects */
+.orange-glow {
+  box-shadow: 0 0 25px rgba(255, 72, 2, 0.25);
+}
+
+.border-subtle {
+  border-color: var(--border);
+}
+
+/* Lenis smooth scrolling rules */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0D100E;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #232A24;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #FF4802;
+}
+
+/* Selection */
+::selection {
+  background: #FF4802;
+  color: #0D100E;
+}

@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="19.5" height="19.5" viewBox="0 0 19.5 19.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="elements">
+<g id="Subtract">
+<path d="M7.75 19.5L7.75 7.75H11.75L11.75 19.5H7.75Z" fill="#FF4802"/>
+<path d="M5.75 19.5H0.75C0.335786 19.5 0 19.1642 0 18.75V7.75L5.75 7.75L5.75 19.5Z" fill="#FF4802"/>
+<path d="M0 5.75L5.75 5.75L5.75 0H0.75C0.335786 0 0 0.335786 0 0.75V5.75Z" fill="#FF4802"/>
+<path d="M7.75 0L7.75 5.75H11.75V0H7.75Z" fill="#FF4802"/>
+<path d="M13.75 0V5.75L19.5 5.75V0.75C19.5 0.335786 19.1642 0 18.75 0H13.75Z" fill="#FF4802"/>
+<path d="M19.5 7.75L13.75 7.75L13.75 19.5H18.75C19.1642 19.5 19.5 19.1642 19.5 18.75V7.75Z" fill="#FF4802"/>
+</g>
+</g>
+</svg>
