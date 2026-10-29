@@ -2,9 +2,6 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/* Figma 155:425 "Sakib Anjum — custom brush vector" — 753.077 × 458.371.
-   Each letter is placed with the exact inset percentages from Figma, so the
-   signature scales cleanly with its container width. */
 const LETTERS = [
   { src: "letter-s", inset: "21.87% 89.69% 54.68% 1.2%" },
   { src: "letter-a", inset: "23.15% 74.39% 54.68% 9.31%" },

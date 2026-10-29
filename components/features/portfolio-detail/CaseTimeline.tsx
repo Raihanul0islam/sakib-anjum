@@ -5,10 +5,6 @@ import { cq } from "@/lib/cq";
 import type { CaseStudy, TimelinePhase } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* Timeline (the one inside Portfolio single). Desktop 162:1846: header + 1200 × 1620
-   winding path with 4 offset-framed images · tablet 255:314 (alternating rows) ·
-   mobile 255:414 (stacked). */
-
 type Box = { left: number; top: number; width: number; height: number };
 const PHASES: {
   image: Box & { radius: string };
@@ -21,7 +17,6 @@ const PHASES: {
   { image: { left: 90, top: 810, width: 450, height: 290, radius: "8px" }, copy: { left: 650, top: 810 }, number: { left: 62, top: 1048 }, waypoint: { left: 394, top: 734 } },
   { image: { left: 680, top: 1210, width: 400, height: 330, radius: "8px" }, copy: { left: 140, top: 1225 }, number: { left: 652, top: 1488 }, waypoint: { left: 784, top: 1114 } },
 ];
-/* Tablet / mobile image corners per phase (mobile phase 2 is square-cornered) */
 const STACKED_RADIUS = ["rounded-b-[8px]", "sm:rounded-[180px]", "rounded-[8px]", "rounded-[8px]"];
 
 function PhaseCopy({ phase, desktop }: { phase: TimelinePhase; desktop?: boolean }) {
@@ -48,7 +43,6 @@ function PhaseCopy({ phase, desktop }: { phase: TimelinePhase; desktop?: boolean
 export function CaseTimeline({ timeline }: { timeline: NonNullable<CaseStudy["timeline"]> }) {
   return (
     <section className="mx-auto flex w-full flex-col gap-[32px] lg:max-w-[1200px] lg:gap-[80px] lg:overflow-clip lg:pb-[40px] lg:pt-[96px]">
-      {/* Header */}
       <header className="flex flex-col gap-[32px] lg:items-center lg:gap-[20px] lg:text-center">
         <p className={cn("font-sans font-medium text-[16px] leading-[26px] lg:leading-[18px]", T.muted)}>TIMELINE</p>
         <div className="flex flex-col gap-[32px] lg:items-center lg:gap-[24px]">
@@ -61,7 +55,6 @@ export function CaseTimeline({ timeline }: { timeline: NonNullable<CaseStudy["ti
         </div>
       </header>
 
-      {/* Desktop composition */}
       <div className="hidden w-full @container lg:block">
         <div className="relative" style={{ height: cq(1620) }}>
           <Image src="/images/portfolio/case/metaface/timeline-path.svg" alt="" fill unoptimized className="pointer-events-none" />
@@ -100,7 +93,6 @@ export function CaseTimeline({ timeline }: { timeline: NonNullable<CaseStudy["ti
         </div>
       </div>
 
-      {/* Tablet / mobile */}
       {timeline.phases.map((phase, i) => (
         <div
           key={phase.meta}

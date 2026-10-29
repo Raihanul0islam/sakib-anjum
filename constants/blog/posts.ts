@@ -1,9 +1,6 @@
-/* Content for /blogs/[slug] (Figma "Blog · single" 61:3958 · 258:280 · 258:388).
-   The Figma article body is the shared template copy until each post gets its own. */
 
 export interface ArticleBullet {
   text: string;
-  /** Desktop text width as drawn in Figma, where it wraps narrower than the column. */
   desktopWidth?: number;
 }
 
@@ -12,7 +9,6 @@ export interface ArticleSection {
   title: string;
   body: string;
   bullets?: ArticleBullet[];
-  /** Image pair below the section (desktop: side by side). */
   images?: [string, string];
   quote?: string;
 }
@@ -87,7 +83,6 @@ const post = (slug: string, title: string, category: string, date: string, readT
   sections: SECTIONS,
 });
 
-/* Every slug the /blogs listing links to, plus the article drawn in Figma. */
 export const BLOG_POSTS: BlogArticle[] = [
   post("hiring-developers-outside-the-capital", "Hiring developers outside the capital", "Lifestyle", "28 Aug 2026", "4 min read"),
   post("running-a-fifteen-person-studio-from-rangpur", "Running a fifteen-person studio from Rangpur", "Studio", "28 Aug 2026", "12 min read"),
@@ -98,7 +93,6 @@ export const BLOG_POSTS: BlogArticle[] = [
 
 export const getBlogPost = (slug: string) => BLOG_POSTS.find((p) => p.slug === slug);
 
-/* "More Articles" — the Tutorial/Lesson Card instances in Figma (73:113). */
 export const RELATED_LESSONS: RelatedLesson[] = [
   {
     href: "/tutorials",

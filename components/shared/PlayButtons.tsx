@@ -1,7 +1,6 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-/* Tutorial/Video Play (Figma 98:170): 64px orange disc, 22px white triangle */
 export function PlayButton({ className }: { className?: string }) {
   return (
     <span
@@ -18,7 +17,6 @@ export function PlayButton({ className }: { className?: string }) {
   );
 }
 
-/* Guided-build rows (189:154): disc + 20 × 24 triangle placed at (24, 20) inside it */
 export function RowPlayButton() {
   return (
     <span aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 size-[64px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FF4802]">
@@ -29,7 +27,6 @@ export function RowPlayButton() {
   );
 }
 
-/* Speaking session previews (123:167): 72px disc at the lower left, 20 × 24 triangle at (28, 24) */
 export function CornerPlayButton({ dark, style }: { dark?: boolean; style?: React.CSSProperties }) {
   return (
     <span aria-hidden className="pointer-events-none absolute size-[72px] rounded-full bg-[#FF4802]" style={style}>

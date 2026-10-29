@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* 02 — Challenges. Desktop 162:1688 (900 wide) · tablet 255:268 · mobile 255:368 */
 export function CaseChallenges({ challenges }: { challenges: NonNullable<CaseStudy["challenges"]> }) {
   return (
     <section className="mx-auto flex w-full flex-col gap-[24px] lg:max-w-[900px] lg:gap-0 lg:pb-[40px] lg:pt-[96px]">

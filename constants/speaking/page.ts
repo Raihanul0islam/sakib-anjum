@@ -1,4 +1,3 @@
-/* Content for /speaking (Figma "Speaking · Dark" 29:670 · 260:316 · 260:428). */
 
 export const SPEAKING_INTRO = {
   script: "speaking",
@@ -26,7 +25,6 @@ export const WORKSHOP_STORY = {
   titleLines: ["From shared ideas", "to working software."] as [string, string],
   summary:
     "Practical sessions for developers, founders, and teams. Explore production-ready systems, work through the decisions behind them, and leave with ideas you can apply to your next project.",
-  /* Spaces are part of the column alignment, as set in Figma */
   meta: ["FORMAT  /  TALK · WORKSHOP · Q&A", "TOPICS  /  SOFTWARE · SYSTEMS · STUDIO", "EVENT   /  NAME & DATE TO BE CONFIRMED"],
   link: { label: "Discuss a workshop ↗", href: "/contact" },
   image: "/images/assets/figma_4aa1e6df0b.jpg",
@@ -40,7 +38,6 @@ export const SESSIONS_INTRO = {
 export interface SpeakingSession {
   number: string;
   label: string;
-  /** One entry per line; a single entry wraps naturally. */
   titleLines: string[];
   summary: string;
   tags: string;

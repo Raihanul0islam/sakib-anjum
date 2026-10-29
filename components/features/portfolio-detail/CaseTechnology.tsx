@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* 05 — Technology. Desktop 162:1792 (rows of 3, 44 gap) · tablet 255:293 / mobile 255:393 (2 columns) */
 export function CaseTechnology({ items }: { items: NonNullable<CaseStudy["technology"]> }) {
   const rows = [items.slice(0, 3), items.slice(3)].filter((r) => r.length);
 
@@ -11,7 +10,6 @@ export function CaseTechnology({ items }: { items: NonNullable<CaseStudy["techno
     <section className="mx-auto flex w-full flex-col gap-[24px] lg:max-w-[900px] lg:flex-row lg:justify-center lg:gap-[14px] lg:pb-[40px] lg:pt-[96px]">
       <p className={cn(T.eyebrow, T.subtle, "leading-[26px] lg:h-[156px] lg:w-[258px] lg:shrink-0 lg:leading-[14px]")}>05 — Technology</p>
 
-      {/* Desktop rows */}
       <div className="hidden min-w-0 flex-1 flex-col gap-[24px] lg:flex">
         {rows.map((row, r) => (
           <ul key={r} className="flex items-center gap-[44px]">
@@ -25,7 +23,6 @@ export function CaseTechnology({ items }: { items: NonNullable<CaseStudy["techno
         ))}
       </div>
 
-      {/* Tablet / mobile: 2 columns */}
       <ul className="grid grid-cols-2 gap-[24px] lg:hidden">
         {items.map((t) => (
           <li key={t.name} className="flex min-w-0 flex-col gap-[8px]">

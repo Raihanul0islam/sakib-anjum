@@ -9,13 +9,10 @@ const INTRO =
 const PORTRAIT = "/images/home/sakib-portrait.jpg";
 const ROLE = "Educator / Founder";
 
-
-/* Desktop ≥992 — Figma 155:407: 1200 × 604 composition. */
 function HeroDesktop() {
   return (
     <div className="hidden w-full @container lg:block">
       <div className="relative" style={{ minHeight: cq(604) }}>
-        {/* Intro + socials (155:409) — in flow so long text never overlaps the list */}
         <div style={{ paddingLeft: cq(48), paddingTop: cq(387) }}>
           <p
             className="font-mono-code text-[18px] leading-[28px] text-[#F2F0E9]"
@@ -26,7 +23,6 @@ function HeroDesktop() {
           <SocialLinks className="pt-[32px]" />
         </div>
 
-        {/* Portrait + role (155:419) */}
         <div
           className="absolute flex flex-col gap-[16px]"
           style={{ left: cq(758), top: cq(82), width: cq(352) }}
@@ -44,7 +40,6 @@ function HeroDesktop() {
           </p>
         </div>
 
-        {/* Brush signature (155:423) — sits above the portrait */}
         <h1 className="absolute" style={{ left: cq(50), top: cq(-62), width: cq(753.077) }}>
           <span className="sr-only">Sakib Anjum</span>
           <Signature />
@@ -54,8 +49,6 @@ function HeroDesktop() {
   );
 }
 
-/* Tablet 576–991 — Figma 246:219: two balanced columns, 656 wide
-   (portrait column 272/656 of the row). */
 function HeroTablet() {
   return (
     <div className="hidden w-full items-center gap-[32px] sm:flex lg:hidden">
@@ -79,8 +72,6 @@ function HeroTablet() {
   );
 }
 
-/* Mobile ≤575 — Figma 246:277: brush name overlaps the portrait. Values are
-   fractions of the 350px composition so it scales with width. */
 function HeroMobile() {
   return (
     <div className="flex w-full flex-col gap-[18px] sm:hidden">

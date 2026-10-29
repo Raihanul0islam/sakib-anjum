@@ -4,12 +4,9 @@ import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* Testimonial. Desktop 162:1779 (804 × 445: quote mark, card, photo behind) ·
-   tablet 255:309 (photo + quote) · mobile 255:409 (stacked) */
 export function CaseTestimonial({ testimonial }: { testimonial: NonNullable<CaseStudy["testimonial"]> }) {
   return (
     <section className="mx-auto w-full lg:max-w-[804px] lg:pb-[40px] lg:pt-[96px]">
-      {/* Desktop */}
       <figure className="relative hidden h-[445px] lg:block">
         <div className="absolute left-[553px] top-[200.75px] h-[254px] w-[253px] bg-[#262624]">
           <Image src={testimonial.photo} alt="" fill sizes="253px" className="object-cover" />
@@ -21,7 +18,6 @@ export function CaseTestimonial({ testimonial }: { testimonial: NonNullable<Case
         <Image src="/images/icons/quote.svg" alt="" width={46.38} height={36.506} unoptimized className="absolute left-0 top-0" style={{ width: 46.38, height: 36.506 }} />
       </figure>
 
-      {/* Tablet / mobile */}
       <figure className="flex flex-col gap-[24px] sm:flex-row sm:items-start lg:hidden">
         <div className="relative aspect-square w-full shrink-0 bg-[#262624] sm:w-[176px]">
           <Image src={testimonial.photo} alt="" fill sizes="(min-width: 576px) 176px, 100vw" className="object-cover" />

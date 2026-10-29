@@ -15,9 +15,6 @@ import {
   type PortfolioCategory,
 } from "@/constants/portfolio/showcase";
 
-/* Tablet 576–991 (Figma 251:244) and mobile ≤575 (Figma 251:385).
-   Stacked stories: number → image → details, with working category filters. */
-
 const LABEL = "font-sans text-[16px] font-medium leading-[26px] tracking-[1.4px] uppercase text-[#ABB3A9]";
 const STORY_LINK = "self-start font-sans text-[16px] leading-[26px] text-[#FF4802] transition-opacity hover:opacity-80";
 
@@ -104,7 +101,6 @@ function Details({ project, children }: { project: FeaturedProject; children?: R
   );
 }
 
-/* 01 · 02 · 03 — number overlaps the image top on tablet */
 function StandardStory({ project }: { project: FeaturedProject }) {
   const image = {
     "01": { tablet: { ...IMG.preciseclock, aspect: "656/350" }, mobile: { ...IMG.preciseclock, aspect: "326/220" } },
@@ -144,7 +140,6 @@ function StandardStory({ project }: { project: FeaturedProject }) {
                   className={cn(
                     "border-t border-[#343D35] py-[16px] font-sans text-[16px] leading-[24px] text-[#F2F0E9]",
                     i === 1 && "sm:font-mono-code",
-                    // Figma doesn't count the list strokes in its height (1047 vs 1049)
                     i === project.shipped!.length - 1 && "sm:border-b sm:pb-[14px]"
                   )}
                 >
@@ -159,7 +154,6 @@ function StandardStory({ project }: { project: FeaturedProject }) {
   );
 }
 
-/* 04 — two photos beside the details on tablet, above them on mobile */
 function VoiceStory({ project }: { project: FeaturedProject }) {
   return (
     <article className="flex flex-col gap-[16px] py-[24px] sm:gap-[24px] sm:py-[32px]">
@@ -219,7 +213,6 @@ function Archive() {
                 <span className="w-[64px]">{item.year}</span>
               </p>
             </Link>
-            {/* Hover preview (Figma 251:355), pointer devices only */}
               <div className="pointer-events-none absolute left-[56.34%] top-[-45.95px] hidden h-[120px] w-[140px] rotate-[1.16deg] opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:block">
                 <Image src={item.thumbnail} alt="" fill sizes="140px" className="object-cover" />
               </div>

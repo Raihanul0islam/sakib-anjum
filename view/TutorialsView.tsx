@@ -5,7 +5,6 @@ import { FEATURED_LESSONS, GUIDED_BUILDS } from "@/constants/tutorials/catalog";
 import { TutorialsDesktop, type Filter } from "@/components/features/tutorials/TutorialsDesktop";
 import { TutorialsStacked } from "@/components/features/tutorials/TutorialsStacked";
 
-/* Figma: desktop 29:896 · tablet 261:340 · mobile 261:511. The category filter is shared by both layouts. */
 export function TutorialsView() {
   const [filter, setFilter] = useState<Filter>("all");
   const match = (c: string) => filter === "all" || c === filter;

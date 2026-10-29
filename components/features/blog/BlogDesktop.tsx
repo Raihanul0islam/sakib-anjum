@@ -11,9 +11,6 @@ import {
   type BlogEssay,
 } from "@/constants/blog/listing";
 
-/* Desktop ≥992 — Figma "Blog · Dark" (29:370). Each section is the 1200px Figma
-   composition; cq() keeps it exact at 1200 and scales it down to 992. */
-
 const [essay1, essay2, essay3] = BLOG_ESSAYS;
 const LABEL = "font-sans text-[16px] font-medium leading-[20px] tracking-[1.4px] uppercase text-[#ABB3A9]";
 const LINK = "font-sans text-[16px] leading-[19px] text-[#FF4802] transition-opacity hover:opacity-80";
@@ -47,7 +44,6 @@ function Photo({ src, alt, style }: { src: string; alt: string; style: React.CSS
   );
 }
 
-/* Essay card (Figma 209:467): 451 wide, 24/32 padding */
 function EssayCard({ essay }: { essay: BlogEssay }) {
   return (
     <div className="flex w-full flex-col gap-[40px] bg-[#171B18] px-[24px] py-[32px]" style={CARD_SHADOW}>
@@ -58,7 +54,6 @@ function EssayCard({ essay }: { essay: BlogEssay }) {
             {essay.title}
           </Link>
         </h2>
-        {/* 42 mono chars = 403.2px; Figma fits them in its 403px box, so allow the extra fraction */}
         <p className="mr-[-1px] font-mono-code text-[16px] leading-[26px] text-[#ABB3A9]">{essay.summary}</p>
       </div>
       <Link href={`/blogs/${essay.slug}`} className={cn(LINK, "self-start whitespace-nowrap")}>
@@ -68,7 +63,6 @@ function EssayCard({ essay }: { essay: BlogEssay }) {
   );
 }
 
-/* 29:396 — intro */
 function Intro() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -98,7 +92,6 @@ function Intro() {
   );
 }
 
-/* 88:177 — essay 01: photo left, card right */
 function EssayOne() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -113,7 +106,6 @@ function EssayOne() {
   );
 }
 
-/* 88:187 — essay 02: big title + offset copy left, portrait photo right */
 function EssayTwo() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -143,14 +135,12 @@ function EssayTwo() {
   );
 }
 
-/* 88:196 — essay 03: wide photo, card overlapping its lower-left */
 function EssayThree() {
   return (
     <Section className="pb-[40px] pt-[96px]">
       <div className="relative flow-root" style={{ minHeight: cq(700) }}>
         <BigNumber value={essay3.number} style={{ left: cq(1021), top: cq(454.34) }} />
         <Photo src={essay3.image} alt={essay3.title} style={{ left: 0, top: cq(48), width: "100%", height: cq(440) }} />
-        {/* Card hangs 3.34px below the 700 box in Figma without adding height */}
         <div className="relative" style={{ marginLeft: cq(48), marginTop: cq(360.34), marginBottom: cq(-3.34), width: cq(451) }}>
           <EssayCard essay={essay3} />
         </div>
@@ -159,7 +149,6 @@ function EssayThree() {
   );
 }
 
-/* 29:452 — archive */
 function Archive() {
   return (
     <Section className="py-[96px]">

@@ -14,8 +14,6 @@ import {
   type BlogEssay,
 } from "@/constants/blog/listing";
 
-/* Tablet 576–991 (Figma 257:277) and mobile ≤575 (Figma 257:365). */
-
 type Filter = "all" | BlogCategory;
 const META = "font-sans text-[16px] leading-[26px] text-[#ABB3A9]";
 const LINK = "self-start font-sans text-[16px] leading-[26px] text-[#FF4802] transition-opacity hover:opacity-80";
@@ -31,14 +29,12 @@ function FilterButton({ f, active, onClick }: { f: (typeof BLOG_FILTERS)[number]
         active ? "text-[#F2F0E9]" : "text-[#ABB3A9] hover:text-[#F2F0E9]"
       )}
     >
-      {/* Negative margins drop the trailing letter-spacing, which Figma's text boxes leave out */}
       <span className="mr-[-3.52px] tracking-[3.52px]">{f.label}</span>
       <span className="mr-[-0.72px] tracking-[0.72px] text-[#ABB3A9]">{f.count}</span>
     </button>
   );
 }
 
-/* Rows as drawn: mobile 2 · 2 · 1, tablet 3 · 2 */
 function Filters({ active, onChange }: { active: Filter; onChange: (f: Filter) => void }) {
   const row = (items: typeof BLOG_FILTERS, className?: string) => (
     <div className={cn("flex gap-[12px]", className)}>
@@ -81,7 +77,6 @@ function Essay({ essay }: { essay: BlogEssay }) {
         </Link>
         <div className="flex min-w-0 flex-1 flex-col gap-[16px]">
           <p className={cn(META, !portrait && "font-medium uppercase tracking-[1.4px]")}>{essay.meta}</p>
-          {/* Figma sets "Running a fifteen-person" a hair wider than Chrome; 2px less room on mobile gives its line breaks */}
           <h2
             className={cn(
               "pr-[2px] font-sans text-[28px] leading-[34px] text-[#F2F0E9] sm:pr-0 sm:text-[36px] sm:leading-[43px]",

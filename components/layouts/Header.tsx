@@ -5,10 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { MegaMenu } from "./MegaMenu";
 
-/* Figma Header/Navbar — Contained
-   Desktop (236:1245): flat, 16px / 40px padding, 1200px container with 24px inner padding.
-   Tablet (246:208) / Mobile (236:2044): 80px row holding a 72px #0D100E box,
-   1px #343D35 border, 12px radius. */
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleOpen = useCallback(() => setIsMenuOpen(true), []);
@@ -16,7 +12,7 @@ export function Header() {
 
   return (
     <>
-      <header className="flex h-[80px] w-full items-center justify-center lg:h-auto lg:px-[40px] lg:py-[16px]">
+      <header className="flex h-[80px] border-b border-[#0D100E] w-full items-center justify-center lg:h-auto lg:px-[40px] lg:py-[16px]">
         <div className="flex h-[72px] w-full items-center justify-between overflow-clip rounded-[12px] border border-[#343D35] bg-[#0D100E] px-[16px] py-[12px] sm:px-[20px] lg:h-auto lg:max-w-[1200px] lg:rounded-none lg:border-0 lg:bg-transparent lg:px-[24px] lg:py-0">
           <Link
             href="/"
@@ -35,7 +31,14 @@ export function Header() {
             <span className="whitespace-nowrap font-sans text-[16px] font-medium leading-[1.2] text-[#F2F0E9]">
               Menu
             </span>
-            <Image src="/images/icons/menu.svg" alt="" width={24} height={24} unoptimized className="size-[24px]" />
+            <Image
+              src="/images/icons/menu.svg"
+              alt=""
+              width={24}
+              height={24}
+              unoptimized
+              className="size-[24px]"
+            />
           </button>
         </div>
       </header>

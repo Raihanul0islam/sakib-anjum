@@ -3,9 +3,6 @@ import Image from "next/image";
 import { SOCIAL_LINKS } from "@/constants/site";
 import { cn } from "@/lib/utils";
 
-/* Figma 155:415 — 24px icon boxes, 16px gap. SVGs exported from Figma at
-   their natural size and centred in the box. LinkedIn is flipped vertically
-   in the design (rotate 180° + mirror X). */
 const ICONS = [
   { key: "github", src: "/images/icons/github.svg", w: 21.5, h: 21.5 },
   { key: "linkedin", src: "/images/icons/linkedin.svg", w: 20.5, h: 20.5, flip: true },

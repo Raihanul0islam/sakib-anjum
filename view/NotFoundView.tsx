@@ -4,10 +4,6 @@ import { cn } from "@/lib/utils";
 import { cq } from "@/lib/cq";
 import { NOT_FOUND as N } from "@/constants/not-found/page";
 
-/* 404 — no Figma frame. Built from the site's own patterns: the script-heading hero
-   (Tutorials / Speaking), the faded section number, the orange "Start a project"
-   button from the case-study footer, and the bordered archive rows. */
-
 const LABEL = "font-sans text-[16px] font-medium uppercase tracking-[1.4px] text-[#ABB3A9]";
 const PRIMARY =
   "inline-flex border border-[#FF6A4D] bg-[#FF4802] px-[22px] py-[15px] font-sans text-[16px] uppercase leading-[20px] text-[#F2F0E9] transition-colors hover:bg-[#FF5A1A]";
@@ -66,7 +62,6 @@ function Explore() {
   );
 }
 
-/* Desktop ≥992 — 1200 composition like the other heroes; cq() scales it down to 992 */
 function Desktop() {
   return (
     <div className="hidden flex-col px-[20px] lg:flex">
@@ -111,7 +106,6 @@ function Desktop() {
   );
 }
 
-/* Tablet 576–991 / mobile ≤575 — the stacked page rhythm used everywhere else */
 function Stacked() {
   return (
     <div className="flex flex-col items-center px-[16px] pb-[32px] pt-[24px] sm:px-[32px] sm:pb-[48px] sm:pt-[40px] lg:hidden">

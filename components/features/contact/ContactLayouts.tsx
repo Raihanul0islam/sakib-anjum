@@ -8,15 +8,11 @@ import { NoteForm } from "./NoteForm";
 const C = CONTACT_PAGE;
 const LABEL = "font-sans text-[16px] font-medium uppercase tracking-[1.4px] text-[#ABB3A9]";
 
-/* Desktop ≥992 — Figma "Contact · Dark" (29:593): one 1200 × 1223 composition.
-   cq() keeps it exact at 1200 and scales it down to 992. */
 export function ContactDesktop() {
   return (
     <section className="hidden justify-center px-[20px] pb-[40px] pt-[96px] lg:flex">
       <div className="w-full max-w-[1200px] @container">
-        {/* Headline is placed absolutely; the rest flows from y 373.84 so the section grows when 16px copy wraps below 1200 */}
         <div className="relative" style={{ minHeight: cq(1223), paddingTop: cq(373.841) }}>
-          {/* 161:940 — script + headline (headline right-aligned in the 1010 column) */}
           <div className="absolute flex flex-col gap-[32px]" style={{ left: cq(48), top: cq(-0.159), width: cq(1010) }}>
             <p aria-hidden className="font-brush lowercase text-[#FF4802]" style={{ fontSize: cq(120), lineHeight: cq(105.6), letterSpacing: cq(-1.2) }}>
               {C.script}
@@ -28,7 +24,6 @@ export function ContactDesktop() {
             </div>
           </div>
 
-          {/* 161:855 — email, details and the note form */}
           <div className="relative flex flex-col" style={{ marginLeft: cq(330), width: cq(870) }}>
             <div className="pb-[15px]">
               <a
@@ -59,7 +54,6 @@ export function ContactDesktop() {
                 <div className="grid grid-rows-[14px_24px] gap-[8px]">
                   <p className={cn(LABEL, "leading-[20px] whitespace-nowrap")}>{C.elsewhere.label}</p>
                   <div className="pt-[8px]">
-                    {/* Figma lets the three links run 32px past the 352 column; they wrap once the composition narrows */}
                     <div className="flex h-[16px] gap-x-[32px] gap-y-[8px] @max-[1150px]:h-auto @max-[1150px]:flex-wrap">
                       {C.elsewhere.links.map((l) => (
                         <a
@@ -77,7 +71,6 @@ export function ContactDesktop() {
                   </div>
                 </div>
                 </div>
-                {/* Badge sits at (456, 944.84) of the composition: 117.2 below this column, 126 in */}
                 <AvailabilityBadge style={{ marginTop: cq(117.2), marginLeft: cq(126) }} />
               </div>
               <div className="min-w-0 flex-1 pt-[240px]">
@@ -92,7 +85,6 @@ export function ContactDesktop() {
   );
 }
 
-/* Tablet 576–991 (Figma 259:301) and mobile ≤575 (Figma 259:363) */
 export function ContactStacked() {
   const detail = "flex flex-col gap-[8px] text-[16px] leading-[26px]";
   return (
@@ -138,7 +130,6 @@ export function ContactStacked() {
                 </a>
               ))}
             </div>
-            {/* Tablet keeps the badge in this column; mobile moves it below the form */}
             <AvailabilityBadge className="hidden sm:block" />
           </div>
           <div className="min-w-0 sm:flex-1">

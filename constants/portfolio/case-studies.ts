@@ -1,11 +1,7 @@
-/* Case-study content for /portfolio/[slug] (Figma "Portfolio ·single" 162:1585 · 254:256 · 254:325).
-   Metaface is the case study drawn in Figma; every section is optional so other
-   projects can reuse the layout with whatever content they have. */
 
 export interface CaseStudyFact {
   term: string;
   value: string;
-  /** Not shown in the desktop strip (Figma desktop lists Client, Industry, Timeline only). */
   mobileOnly?: boolean;
 }
 
@@ -41,7 +37,6 @@ export interface CaseStudy {
   testimonial?: { quote: string; author: string; photo: string };
   timeline?: { title: [string, string]; summary: string; phases: TimelinePhase[] };
   outcome?: { title: string; paragraphs: [string, string] };
-  /** How this project appears in another case study's "Next story" block. */
   card: { meta: string; title: string; summary: string; image: string };
   next: string;
 }

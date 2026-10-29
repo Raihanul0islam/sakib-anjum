@@ -5,11 +5,8 @@ import { cn } from "@/lib/utils";
 import { RELATED_LESSONS, type ArticleSection, type BlogArticle } from "@/constants/blog/posts";
 import { ShareLinks } from "./ShareLinks";
 
-/* Tablet 576–991 (Figma 258:289) and mobile ≤575 (Figma 258:397). */
-
 const META = "font-sans text-[16px] font-medium leading-[26px] tracking-[-0.32px]";
 const BODY = "font-mono-code text-[16px] leading-[26px] tracking-[-0.24px] text-[rgba(246,245,240,0.9)]";
-/* The desktop copy renders the same headings; these ids keep the anchors unique */
 const anchor = (id: string) => `${id}-m`;
 
 function DateRow({ date, readTime, slash, className }: { date: string; readTime: string; slash?: boolean; className?: string }) {
@@ -41,7 +38,6 @@ export function ArticleStacked({ post, url }: { post: BlogArticle; url: string }
   return (
     <div className="flex flex-col items-center px-[16px] pb-[32px] pt-[24px] sm:px-[32px] sm:pb-[48px] sm:pt-[40px] lg:hidden">
       <div className="flex w-full flex-col gap-[48px] sm:max-w-[656px] sm:gap-[64px]">
-        {/* Hero */}
         <header className="flex flex-col gap-[20px]">
           <p aria-hidden className="font-brush text-[72px] lowercase leading-[86px] tracking-[-1.2px] text-[#FF4802] sm:text-[96px] sm:leading-[115px]">
             blog
@@ -62,7 +58,6 @@ export function ArticleStacked({ post, url }: { post: BlogArticle; url: string }
           </div>
         </header>
 
-        {/* Contents + sharing */}
         <div className="flex flex-col gap-[24px] border-y border-[#343D35] py-[24px] sm:flex-row">
           <nav aria-label="Table of contents" className={cn(META, "flex flex-col gap-[12px] text-[#F2F0E9] sm:w-[382px] sm:shrink-0")}>
             <p>Table of contents</p>
@@ -78,7 +73,6 @@ export function ArticleStacked({ post, url }: { post: BlogArticle; url: string }
           </div>
         </div>
 
-        {/* Reading column */}
         <div className="flex flex-col gap-[32px]">
           {post.sections.map((s) => (
             <React.Fragment key={s.id}>
@@ -109,7 +103,6 @@ export function ArticleStacked({ post, url }: { post: BlogArticle; url: string }
           ))}
         </div>
 
-        {/* More articles */}
         <section className="flex flex-col gap-[32px]">
           <h2 className="font-sans text-[32px] font-medium leading-[38px] text-[#F2F0E9]">More Articles</h2>
           {RELATED_LESSONS.map((l) => (

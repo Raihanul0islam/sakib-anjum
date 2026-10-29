@@ -6,7 +6,6 @@ import { T } from "./styles";
 
 const HERO_CROP = { left: "-7.65%", top: "-0.12%", width: "130.72%", height: "100%" };
 
-/* 01 — Hero. Desktop 162:1611 · tablet 254:266 · mobile 254:335 */
 export function CaseHero({ study }: { study: CaseStudy }) {
   return (
     <section className="mx-auto flex w-full flex-col gap-[24px] lg:max-w-[1152px] lg:gap-[64px] lg:pb-[40px] lg:pt-[96px]">
@@ -36,7 +35,6 @@ export function CaseHero({ study }: { study: CaseStudy }) {
       </div>
 
       <div className="flex flex-col gap-[24px] lg:gap-0">
-        {/* Image: 1152 × 542 window onto a 1152 × 730 frame (desktop); fixed-height crops below */}
         <div className="relative overflow-hidden bg-[#262624] aspect-[326/230] sm:aspect-[656/420] lg:aspect-[1152/542.25]">
           <CroppedImage
             src={study.hero}
@@ -48,7 +46,6 @@ export function CaseHero({ study }: { study: CaseStudy }) {
           />
         </div>
 
-        {/* Facts — desktop strip */}
         <dl className="hidden items-center justify-between bg-[#232A24] py-[32px] pl-[24px] pr-[8px] lg:flex">
           {study.facts
             .filter((f) => !f.mobileOnly)
@@ -60,7 +57,6 @@ export function CaseHero({ study }: { study: CaseStudy }) {
             ))}
         </dl>
 
-        {/* Facts — tablet 2 columns, mobile 1 column */}
         <dl className="grid grid-cols-1 gap-[16px] text-[16px] leading-[26px] sm:grid-cols-2 sm:gap-x-[24px] lg:hidden">
           {study.facts.map((f) => (
             <div key={f.term} className="flex flex-col gap-[4px]">

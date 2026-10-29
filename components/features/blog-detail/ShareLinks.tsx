@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 
-/* "Share on:" icon row (Figma 61:4482): 45px circles, 6px apart. */
 const ICONS = [
   { name: "Facebook", src: "/icons/blog/facebook.svg", w: 16.579, h: 16.579, href: (u: string) => `https://www.facebook.com/sharer/sharer.php?u=${u}` },
   { name: "Instagram", src: "/icons/blog/instagram.svg", w: 18.947, h: 18.947, href: () => "https://www.instagram.com/" },

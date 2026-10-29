@@ -1,9 +1,7 @@
-/* Content for the /portfolio listing (Figma 29:102 · 251:244 · 251:385). */
 
 export type PortfolioCategory = "saas" | "commerce" | "ai";
 
 export interface Crop {
-  /** Image box inside its frame, in % — mirrors the Figma image fill transform. */
   left: string;
   top: string;
   width: string;
@@ -71,7 +69,6 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
     category: "commerce",
     label: "Multi-vendor commerce",
     title: "BlackDevs Marketplace",
-    // Copy as written in Figma (same as PreciseClock) — replace when final copy is ready.
     description:
       "A multi-tenant time-tracking platform: geofenced clock-ins, shift rules and payroll exports that finance can sign off without a spreadsheet.",
     meta: [
@@ -105,15 +102,12 @@ export const FEATURED_PROJECTS: FeaturedProject[] = [
 export interface ArchiveProject {
   number: string;
   title: string;
-  /** Desktop title size from Figma (rows differ slightly). */
   titleSize: number;
-  /** Desktop description column width from Figma. */
   descWidth: number;
   description: string;
   type: string;
   year: string;
   href: string;
-  /** Shown on hover. Placeholder = the one photo in Figma; replace per project. */
   thumbnail: string;
 }
 
@@ -166,7 +160,6 @@ export const ARCHIVE_PROJECTS: ArchiveProject[] = [
 
 const IMG = "/images/portfolio/list";
 
-/* Image sources + crops per breakpoint, copied from the Figma fills. */
 export const PORTFOLIO_IMAGES = {
   preciseclock: {
     src: `${IMG}/preciseclock.png`,

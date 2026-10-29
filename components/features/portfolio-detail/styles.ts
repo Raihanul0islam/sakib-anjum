@@ -1,6 +1,4 @@
-/* Shared text styles for the case-study page (Figma "Portfolio ·single"). */
 export const T = {
-  /** IBM Plex Mono Medium, uppercase, 1.4 tracking — section eyebrows. */
   eyebrow: "font-mono-code text-[16px] font-medium uppercase tracking-[1.4px]",
   text: "text-[#EDEDEA]",
   dim: "text-[#8F8F8A]",

@@ -14,9 +14,6 @@ import {
   type SpeakingSession,
 } from "@/constants/speaking/page";
 
-/* Desktop ≥992 — Figma "Speaking · Dark" (29:670). Compositions are the 1200px
-   Figma layouts; cq() keeps them exact at 1200 and scales them down to 992. */
-
 const LABEL = "font-sans text-[16px] font-medium leading-[20px] tracking-[1.4px] uppercase text-[#ABB3A9]";
 const CARD_SHADOW = { filter: "drop-shadow(0px 32px 32px rgba(0,0,0,0.35)) drop-shadow(0px 2px 4px rgba(0,0,0,0.35))" };
 
@@ -40,7 +37,6 @@ function BigNumber({ value, style }: { value: string; style: React.CSSProperties
   );
 }
 
-/* 29:696 — script heading + intro */
 function Hero() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -69,7 +65,6 @@ function Hero() {
   );
 }
 
-/* 29:705 — speaker photo + profile card (card hangs 30px past the 571 frame) */
 function Profile() {
   const p = SPEAKER_PROFILE;
   return (
@@ -89,7 +84,6 @@ function Profile() {
               <h2 className="w-[288px] max-w-full font-sans text-[20.116px] font-medium leading-[32px] text-[#F2F0E9]">{p.title}</h2>
               <p className="font-mono-code text-[16px] leading-[26px] text-[#ABB3A9]">{p.summary}</p>
             </div>
-            {/* Equal columns at 1200 as in Figma; never narrower than their words, wrapping when the card shrinks */}
             <dl className="flex flex-wrap items-center gap-y-[12px] border-t border-[#343D35] pt-[16px]">
               {p.facts.map((f) => (
                 <div key={f.term} className="flex min-w-fit flex-1 flex-col gap-[8px]">
@@ -105,7 +99,6 @@ function Profile() {
   );
 }
 
-/* 29:734 — workshop story: portrait photo + copy */
 function Workshop() {
   const w = WORKSHOP_STORY;
   return (
@@ -178,7 +171,6 @@ function SessionVideo({ s, style, playTop, dark }: { s: SpeakingSession; style: 
   );
 }
 
-/* 100:5025 — session collection: three layered video stories */
 function Sessions() {
   const [s1, s2, s3] = SESSIONS;
   return (
@@ -193,7 +185,6 @@ function Sessions() {
           </h2>
         </div>
 
-        {/* 123:165 — video left, card right */}
         <div className="relative flex" style={{ minHeight: cq(600) }}>
           <SessionVideo s={s1} dark playTop={338} style={{ left: cq(48), top: cq(24), width: cq(800), height: cq(450) }} />
           <div className="relative self-start" style={{ marginLeft: cq(732), marginTop: cq(148), width: cq(451) }}>
@@ -202,7 +193,6 @@ function Sessions() {
           </div>
         </div>
 
-        {/* 123:178 — card left, video right */}
         <div className="relative flex" style={{ minHeight: cq(600) }}>
           <SessionVideo s={s2} dark playTop={338} style={{ left: cq(352), top: cq(24), width: cq(800), height: cq(450) }} />
           <div className="relative self-start" style={{ marginLeft: cq(6), marginTop: cq(135), width: cq(441) }}>
@@ -211,7 +201,6 @@ function Sessions() {
           </div>
         </div>
 
-        {/* 123:191 — wide video, card lower right; "05" spills below the section */}
         <div className="relative flex" style={{ minHeight: cq(660) }}>
           <BigNumber value={s3.number} style={{ left: cq(1028), top: cq(606) }} />
           <SessionVideo s={s3} playTop={348} style={{ left: cq(48), top: 0, width: cq(1104), height: cq(460) }} />
@@ -227,7 +216,6 @@ function Sessions() {
   );
 }
 
-/* 29:853 — invite */
 function Invite() {
   return (
     <Section className="py-[96px]">

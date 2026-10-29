@@ -14,9 +14,6 @@ import {
 } from "@/constants/tutorials/catalog";
 import { PlayButton, RowPlayButton } from "./shared";
 
-/* Desktop ≥992 — Figma "Tutorials · Dark" (29:896). Compositions are the 1200px
-   Figma layouts; cq() keeps them exact at 1200 and scales them down to 992. */
-
 export type Filter = "all" | TutorialCategory;
 
 const LABEL = "font-sans text-[16px] font-medium leading-[20px] tracking-[1.4px] uppercase";
@@ -30,7 +27,6 @@ function Section({ children, className }: { children: React.ReactNode; className
   );
 }
 
-/* 29:922 — script heading + intro */
 function Hero() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -58,7 +54,6 @@ function Hero() {
   );
 }
 
-/* Navigation - Filter (187:3071) */
 function Filters({ active, onChange }: { active: Filter; onChange: (f: Filter) => void }) {
   return (
     <div role="group" aria-label="Filter lessons" className="flex h-[35.656px] items-start gap-[24px]">
@@ -84,7 +79,6 @@ function Filters({ active, onChange }: { active: Filter; onChange: (f: Filter) =
   );
 }
 
-/* 800 × 455 lesson preview: still, the 728px rule band, hover reveal, play disc */
 function Preview({ lesson }: { lesson: FeaturedLesson }) {
   return (
     <Link href={lesson.href} className="group relative block h-full w-full overflow-clip rounded-[12px]" aria-label={`Play: ${lesson.title}`}>
@@ -97,7 +91,6 @@ function Preview({ lesson }: { lesson: FeaturedLesson }) {
           <Image src={lesson.image} alt={lesson.title} fill sizes="(min-width: 1240px) 800px, 66vw" className="object-cover" />
         )}
       </span>
-      {/* Five 1px "Preview grid" rules stacked at the top-left */}
       <span aria-hidden className="absolute left-0 top-0 h-[5px] bg-[#343D35]" style={{ width: cq(728) }} />
       {lesson.previewCaption && (
         <span className="absolute inset-0 rounded-[12px] opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
@@ -112,7 +105,6 @@ function Preview({ lesson }: { lesson: FeaturedLesson }) {
   );
 }
 
-/* Lesson card (187:3183): 451 wide, faded number on the side away from the image */
 function LessonCard({ lesson, numberSide }: { lesson: FeaturedLesson; numberSide: "right" | "left" }) {
   return (
     <div className="relative">
@@ -131,7 +123,6 @@ function LessonCard({ lesson, numberSide }: { lesson: FeaturedLesson; numberSide
       </span>
       <div className="relative flex flex-col gap-[32px] bg-[#171B18] px-[24px] py-[32px]" style={CARD_SHADOW}>
         <div className="flex flex-col gap-[40px]">
-          {/* Figma fixes this block at 181 and lets copy spill 13px into the gap below; min-h + the summary's -13px keep that at 1200 and let it grow when the copy wraps more */}
           <div className="flex min-h-[181px] flex-col gap-[16px]">
             <p className={cn(LABEL, "whitespace-nowrap text-[#ABB3A9]")}>{lesson.label}</p>
             <h2
@@ -166,7 +157,6 @@ function LessonCard({ lesson, numberSide }: { lesson: FeaturedLesson; numberSide
   );
 }
 
-/* One composition: 800 × 455 preview + 451 card overlapping it */
 function Composition({
   lesson,
   cardSide,
@@ -186,8 +176,6 @@ function Composition({
         <Preview lesson={lesson} />
       </div>
       {top}
-      {/* In flow so the section grows if the 16px card copy wraps more below 1200;
-          at 1200 the 404px card ends 0.34px past the 519 frame, as in Figma */}
       <div className="relative self-start" style={{ marginTop: cq(115.34), marginBottom: cq(Math.min(0, height - 519.34)), width: cq(451) }}>
         <LessonCard lesson={lesson} numberSide={cardSide === "right" ? "right" : "left"} />
       </div>
@@ -195,7 +183,6 @@ function Composition({
   );
 }
 
-/* 29:952 — filters + featured lesson */
 function Featured({ lesson, filter, onFilter }: { lesson?: FeaturedLesson; filter: Filter; onFilter: (f: Filter) => void }) {
   const nav = (
     <div className="absolute left-0" style={{ top: cq(0.34) }}>
@@ -209,7 +196,6 @@ function Featured({ lesson, filter, onFilter }: { lesson?: FeaturedLesson; filte
   );
 }
 
-/* 73:109 — alternating lessons 02 / 03 */
 function RealProjects({ lessons }: { lessons: FeaturedLesson[] }) {
   if (!lessons.length) return null;
   return (
@@ -231,7 +217,6 @@ function RealProjects({ lessons }: { lessons: FeaturedLesson[] }) {
   );
 }
 
-/* 189:153 — guided build row */
 function BuildRow({ build }: { build: GuidedBuild }) {
   return (
     <article className="flex items-center gap-[32px] bg-[#171B18] p-[24px]">
@@ -270,7 +255,6 @@ function BuildRow({ build }: { build: GuidedBuild }) {
   );
 }
 
-/* 189:149 — guided builds */
 function GuidedBuilds({ builds }: { builds: GuidedBuild[] }) {
   if (!builds.length) return null;
   return (

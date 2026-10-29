@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* Next story + enquiry. Desktop 162:1939 (py 96) · tablet 255:347 · mobile 255:447 */
 export function CaseNext({ next }: { next: CaseStudy }) {
   const href = `/portfolio/${next.slug}`;
   return (

@@ -3,9 +3,6 @@ import { cn } from "@/lib/utils";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* 00 Brief + 01 Story. Desktop: one section (162:1652, 954 wide, 80 gap).
-   Tablet (254:288 / 254:295) & mobile (254:357 / 254:364): two blocks in the page flow. */
-
 function Row({ eyebrow, heading, children }: { eyebrow: string; heading: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-[24px] sm:flex-row sm:items-start lg:gap-[64px]">

@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { CONTACT_PAGE } from "@/constants/contact/page";
 
-/* "Or leave a note" (Figma 29:637 desktop · 259:320 stacked). Posts to /api/contact. */
-
 type Status = "idle" | "sending" | "sent" | "error";
 
 export function NoteForm({ variant }: { variant: "desktop" | "stacked" }) {
@@ -44,7 +42,6 @@ export function NoteForm({ variant }: { variant: "desktop" | "stacked" }) {
   return (
     <form onSubmit={onSubmit} className={cn("flex flex-col", desktop ? "gap-[32px]" : "gap-[24px]")}>
       <p className={label}>{f.title}</p>
-      {/* Figma fixes the first field at 65px tall on desktop, so the next field starts 6px higher */}
       <div className={cn("flex flex-col gap-[8px]", desktop && "h-[65px]")}>
         <label htmlFor={id("name")} className={label}>
           {f.name.label}

@@ -13,12 +13,9 @@ import {
   type SpeakingSession,
 } from "@/constants/speaking/page";
 
-/* Tablet 576–991 (Figma 260:325) and mobile ≤575 (Figma 260:437). */
-
 const LABEL = "font-sans text-[16px] font-medium leading-[26px] tracking-[1.4px] uppercase text-[#ABB3A9]";
 const MONO = "font-mono-code text-[16px] leading-[26px]";
 const LINK = "self-start font-sans text-[16px] font-medium uppercase leading-[26px] text-[#FF4802] transition-opacity hover:opacity-80";
-/* Tablet tucks the number 24px into what follows; mobile keeps the 24px gap */
 const NUMBER = "font-sans text-[48px] font-medium leading-[58px] tracking-[-6.3251px] text-[#727D72] sm:mb-[-24px] sm:text-[64px] sm:leading-[77px]";
 const TITLE = "font-sans text-[28px] font-medium leading-[34px] text-[#F2F0E9] sm:text-[36px] sm:leading-[43px]";
 
@@ -58,7 +55,6 @@ function Session({ s }: { s: SpeakingSession }) {
               <Lines lines={s.titleLines} />
             </Link>
           </h3>
-          {/* Figma narrows the panel summary to 531 on tablet */}
           <p className={cn(MONO, "text-[#ABB3A9]", s.number === "05" && "sm:max-w-[531px]")}>{s.summary}</p>
           <p className={cn(MONO, "text-[#727D72]")}>{s.tags}</p>
           <p className={cn(MONO, "text-[#727D72]")}>{s.event}</p>
@@ -77,7 +73,6 @@ export function SpeakingStacked() {
   return (
     <div className="flex flex-col items-center px-[16px] pb-[32px] pt-[24px] sm:px-[32px] sm:pb-[48px] sm:pt-[40px] lg:hidden">
       <div className="flex w-full flex-col gap-[48px] sm:max-w-[656px] sm:gap-[64px]">
-        {/* Hero */}
         <header className="flex flex-col gap-[20px]">
           <h1 className="font-brush text-[80px] lowercase leading-[96px] tracking-[-1.2px] text-[#FF4802] sm:text-[104px] sm:leading-[125px]">
             {SPEAKING_INTRO.script}
@@ -89,7 +84,6 @@ export function SpeakingStacked() {
           <p className={cn(MONO, "text-[#F2F0E9]")}>{SPEAKING_INTRO.lead}</p>
         </header>
 
-        {/* 01 — speaker profile */}
         <section className="flex flex-col gap-[24px]">
           <div className="flex flex-col gap-[24px] sm:gap-0">
             <p aria-hidden className={NUMBER}>
@@ -112,7 +106,6 @@ export function SpeakingStacked() {
           </dl>
         </section>
 
-        {/* 02 — workshops */}
         <section className="flex flex-col gap-[24px] sm:gap-0">
           <p aria-hidden className={NUMBER}>
             {w.number}
@@ -135,7 +128,6 @@ export function SpeakingStacked() {
           </div>
         </section>
 
-        {/* Sessions */}
         <section className="flex flex-col gap-[40px]">
           <p className="font-sans text-[16px] font-medium leading-[26px] text-[#F2F0E9]">{SESSIONS_INTRO.label}</p>
           <h2 className="font-sans text-[32px] font-semibold leading-[38px] text-[#F2F0E9] sm:text-[40px] sm:leading-[48px]">
@@ -146,7 +138,6 @@ export function SpeakingStacked() {
           ))}
         </section>
 
-        {/* Invite */}
         <section className="flex flex-col gap-[24px]">
           <h2 className="font-sans text-[32px] font-semibold leading-[38px] tracking-[-0.96px] text-[#F2F0E9] sm:text-[40px] sm:leading-[48px] sm:tracking-[-1.2px]">
             <Lines lines={INVITE.titleLines} />

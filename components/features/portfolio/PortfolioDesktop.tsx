@@ -12,11 +12,6 @@ import {
   type FeaturedProject,
 } from "@/constants/portfolio/showcase";
 
-/* Desktop ≥992 — Figma "Portfolio · Dark" (29:102).
-   Each section is the Figma 1200px composition; positions use cq() so they are
-   exact at 1200 and scale down proportionally between 992 and 1239.
-   Body text keeps its real size and sits in normal flow so it can never overlap. */
-
 const [preciseClock, weeks, marketplace, voice] = FEATURED_PROJECTS;
 
 const IMAGE_SHADOW = "shadow-[0px_32px_64px_-24px_rgba(0,0,0,0.35),0px_2px_8px_0px_rgba(0,0,0,0.35)]";
@@ -32,7 +27,6 @@ function Section({ children, className }: { children: React.ReactNode; className
   );
 }
 
-/* Faded section number (Geist Medium, #727D72 at 40%). */
 function BigNumber({ value, size, style }: { value: string; size: number; style: React.CSSProperties }) {
   return (
     <span
@@ -45,7 +39,6 @@ function BigNumber({ value, size, style }: { value: string; size: number; style:
   );
 }
 
-/* Project card (Figma 29:160 / 159:598): 451 wide, 24/32 padding. */
 function ProjectCard({ project }: { project: FeaturedProject }) {
   const [role, year] = project.meta;
   return (
@@ -76,7 +69,6 @@ function ProjectCard({ project }: { project: FeaturedProject }) {
   );
 }
 
-/* 29:128 — intro */
 function Intro() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -106,7 +98,6 @@ function Intro() {
   );
 }
 
-/* 29:152 — 01 PreciseClock: laptop left, card right */
 function ProjectOne() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -118,7 +109,6 @@ function ProjectOne() {
           className="absolute left-0 top-0 bg-[#0D100E] shadow-[0px_35.499px_70.998px_-26.624px_rgba(0,0,0,0.35),0px_2.219px_8.875px_0px_rgba(0,0,0,0.35)]"
           style={{ width: cq(807.6), height: cq(504.75) }}
         />
-        {/* Card hangs 33.75px below the 505 box in Figma without adding height */}
         <div className="relative self-start" style={{ marginTop: cq(116.75), marginBottom: cq(-33.76), width: cq(451) }}>
           <BigNumber value={preciseClock.number} size={181.189} style={{ right: cq(-51), top: cq(-111) }} />
           <ProjectCard project={preciseClock} />
@@ -128,7 +118,6 @@ function ProjectOne() {
   );
 }
 
-/* 29:185 — 02 5200 Weeks: big title left, phones right */
 function ProjectTwo() {
   const [role, platform] = weeks.meta;
   return (
@@ -144,7 +133,6 @@ function ProjectTwo() {
           />
         </div>
 
-        {/* Text column hangs ~14px below the 451 box in Figma without adding height */}
         <div className="relative" style={{ marginLeft: cq(142), paddingTop: cq(41.75), marginBottom: cq(-13.92) }}>
           <div className="flex flex-col gap-[36px]" style={{ width: cq(445) }}>
             <p className={LABEL}>{weeks.label}</p>
@@ -177,7 +165,6 @@ function ProjectTwo() {
   );
 }
 
-/* 29:218 — 03 Marketplace: full-width banner, card overlaps its bottom edge */
 function ProjectThree() {
   return (
     <Section className="pt-[96px]">
@@ -217,7 +204,6 @@ function ProjectThree() {
   );
 }
 
-/* 29:265 — 04 Voice agent: two photos left, text right */
 function ProjectFour() {
   return (
     <Section className="pb-[40px] pt-[96px]">
@@ -268,7 +254,6 @@ function ProjectFour() {
   );
 }
 
-/* 29:293 — archive list (916 heading, 900 list) */
 function Archive() {
   return (
     <section className="flex flex-col items-center gap-[32px] pb-[64px]">
@@ -298,7 +283,6 @@ function Archive() {
                 >
                   {item.description}
                 </p>
-                {/* Hover preview (Figma 61:3192) */}
                   <div className="pointer-events-none absolute left-[370.49px] top-[-44.92px] h-[149px] w-[133px] rotate-[1.16deg] opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
                     <Image src={item.thumbnail} alt="" fill sizes="133px" className="object-cover" />
                   </div>

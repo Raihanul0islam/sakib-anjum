@@ -13,11 +13,8 @@ import {
 import { MetaRows, PlayButton, metaItems } from "./shared";
 import type { Filter } from "./TutorialsDesktop";
 
-/* Tablet 576–991 (Figma 261:349) and mobile ≤575 (Figma 261:520). */
-
 const LABEL = "font-sans text-[16px] font-medium leading-[26px] tracking-[1.4px] uppercase text-[#ABB3A9]";
 
-/* Tutorial / Categories: three rows of two, as drawn at both sizes */
 function Filters({ active, onChange }: { active: Filter; onChange: (f: Filter) => void }) {
   const rows = [TUTORIAL_FILTERS.slice(0, 2), TUTORIAL_FILTERS.slice(2, 4), TUTORIAL_FILTERS.slice(4)];
   return (
@@ -34,7 +31,6 @@ function Filters({ active, onChange }: { active: Filter; onChange: (f: Filter) =
                 onClick={() => onChange(f.key)}
                 className="flex cursor-pointer gap-[12px] whitespace-nowrap font-sans text-[16px] font-medium uppercase leading-[26px]"
               >
-                {/* Negative margins drop the trailing letter-spacing, which Figma's text boxes leave out */}
                 <span className={cn("mr-[-3.52px] tracking-[3.52px] transition-colors", on ? "text-[#F2F0E9]" : "text-[#ABB3A9] hover:text-[#F2F0E9]")}>{f.label}</span>
                 <span className="mr-[-0.72px] tracking-[0.72px] text-[#ABB3A9]">{f.count}</span>
               </button>

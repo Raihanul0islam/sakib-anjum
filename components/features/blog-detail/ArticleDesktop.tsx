@@ -6,8 +6,6 @@ import { cq } from "@/lib/cq";
 import { RELATED_LESSONS, type ArticleSection, type BlogArticle, type RelatedLesson } from "@/constants/blog/posts";
 import { ShareLinks } from "./ShareLinks";
 
-/* Desktop ≥992 — Figma "Blog · single" (61:3958): 1200 column, 96/40 section spacing. */
-
 const BODY = "font-mono-code text-[16px] leading-[27px] tracking-[-0.24px] text-[rgba(246,245,240,0.9)]";
 const META = "whitespace-nowrap font-sans text-[16px] font-medium leading-[24px] tracking-[-0.32px]";
 
@@ -19,11 +17,9 @@ function Section({ children, className }: { children: React.ReactNode; className
   );
 }
 
-/* 61:4579 — script heading, meta, title, lead, 1200 × 640 image */
 function Hero({ post }: { post: BlogArticle }) {
   return (
     <Section className="pb-[40px] pt-[96px]">
-      {/* cq() keeps the composition exact at 1200 and scales it down to 992 */}
       <div className="flex flex-col gap-[64px] @container">
         <div className="flex flex-col" style={{ paddingInline: cq(48) }}>
           <p
@@ -43,7 +39,6 @@ function Hero({ post }: { post: BlogArticle }) {
                   <span>{post.readTime}</span>
                 </span>
               </div>
-              {/* Figma rounds the two 77.52px lines up to a 156px box */}
               <h1
                 className="font-sans font-semibold text-[#F2F0E9]"
                 style={{ minHeight: cq(156), fontSize: cq(71), lineHeight: cq(77.52), letterSpacing: cq(-2.13) }}
@@ -59,7 +54,6 @@ function Hero({ post }: { post: BlogArticle }) {
             </div>
           </div>
         </div>
-        {/* The image hangs 29px past the 1073.59 hero frame in Figma without adding height */}
         <div className="relative mb-[-29px] aspect-[1200/640] w-full overflow-hidden rounded-[24px]">
           <Image src={post.hero} alt={post.title} fill priority sizes="(min-width: 1240px) 1200px, 100vw" className="object-cover" />
         </div>
@@ -129,12 +123,10 @@ function ArticleSectionBlock({ section }: { section: ArticleSection }) {
   return <SectionCopy section={section} />;
 }
 
-/* 61:4466 — contents + share (250) beside the 950 reading column */
 function Body({ post, url }: { post: BlogArticle; url: string }) {
   return (
     <Section className="pb-[40px] pt-[96px]">
       <div className="flex items-start justify-between">
-        {/* Stays in view while the article scrolls; stops at the end of the reading column */}
         <aside className="sticky top-[40px] flex w-[250px] shrink-0 flex-col gap-[60px]">
           <nav aria-label="Table of contents" className="flex flex-col gap-[24px]">
             <p className={cn(META, "text-[#F2F0E9]")}>Table of contents</p>
@@ -163,7 +155,6 @@ function Body({ post, url }: { post: BlogArticle; url: string }) {
   );
 }
 
-/* Tutorial/Lesson Card (73:113) */
 function LessonCard({ lesson }: { lesson: RelatedLesson }) {
   return (
     <article className="flex flex-col gap-[20px]">
@@ -194,7 +185,6 @@ function LessonCard({ lesson }: { lesson: RelatedLesson }) {
   );
 }
 
-/* 61:4524 — more articles */
 function MoreArticles() {
   return (
     <Section className="pb-[40px] pt-[96px]">

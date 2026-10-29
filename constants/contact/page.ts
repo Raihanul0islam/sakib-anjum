@@ -1,4 +1,3 @@
-/* Content for /contact (Figma "Contact · Dark" 29:568 · 259:292 · 259:354). */
 import { SITE_CONFIG, SOCIAL_LINKS } from "@/constants/site";
 
 const social = (name: string) => SOCIAL_LINKS.find((s) => s.name === name)?.href ?? "#";

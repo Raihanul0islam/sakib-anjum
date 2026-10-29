@@ -1,4 +1,3 @@
-/* Content for /tutorials (Figma "Tutorials · Dark" 29:896 · 261:340 · 261:511). */
 
 export type TutorialCategory = "laravel" | "nextjs" | "flutter" | "shopify" | "ai";
 
@@ -10,7 +9,6 @@ export const TUTORIALS_INTRO = {
   rest: " Every lesson starts from client work and is rebuilt so you can follow along.",
 };
 
-/* Counts are the catalogue totals shown in Figma. */
 export const TUTORIAL_FILTERS: { key: "all" | TutorialCategory; label: string; count: string }[] = [
   { key: "all", label: "All", count: "24" },
   { key: "laravel", label: "Laravel", count: "8" },
@@ -38,18 +36,13 @@ export interface FeaturedLesson {
   time: string;
   parts: string;
   href: string;
-  /** Desktop still; the stacked layouts and the hover reveal use `preview`. */
   image: string;
   preview: string;
-  /** Desktop crop of `image` as set in Figma (object-cover when absent). */
   crop?: { left: string; width: string };
-  /** Desktop card title width when Figma draws it wider than the 288px heading column. */
   cardTitleWidth?: number;
-  /** Caption revealed with the preview on hover (desktop). */
   previewCaption?: string;
 }
 
-/* 01 is the featured lesson; 02 / 03 alternate card right / card left. */
 export const FEATURED_LESSONS: FeaturedLesson[] = [
   {
     number: "01",
@@ -104,7 +97,6 @@ export interface GuidedBuild {
   label: string;
   category: TutorialCategory;
   title: string;
-  /** Desktop title width as drawn in Figma, where it wraps narrower than the column. */
   desktopTitleWidth?: number;
   summary: string;
   level: string;

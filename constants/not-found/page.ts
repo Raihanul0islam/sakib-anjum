@@ -1,4 +1,3 @@
-/* Content for the 404 page (no Figma frame — built from the site's hero + archive patterns). */
 
 export const NOT_FOUND = {
   script: "lost",

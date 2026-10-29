@@ -18,7 +18,6 @@ const ROLES = [
 export function RolesStrip() {
   return (
     <>
-      {/* Desktop — Figma 155:450 */}
       <ul className="hidden w-full items-end justify-between border-t border-[#343D35] pl-[48px] pt-[24px] lg:flex">
         {ROLES.map((role) => (
           <li key={role.title} className="flex flex-col gap-[8px]">
@@ -32,7 +31,6 @@ export function RolesStrip() {
         ))}
       </ul>
 
-      {/* Tablet — Figma 246:253 */}
       <ul className="hidden w-full flex-col gap-[24px] border-t border-[#343D35] pt-[24px] sm:flex lg:hidden">
         {ROLES.map((role) => (
           <li key={role.title} className="flex items-start gap-[24px]">
@@ -46,7 +44,6 @@ export function RolesStrip() {
         ))}
       </ul>
 
-      {/* Mobile — Figma 246:311 */}
       <ul className="mx-[30px] flex flex-col gap-[24px] border-t border-[#343D35] pt-[24px] sm:hidden">
         {ROLES.map((role) => (
           <li key={role.title} className="flex flex-col gap-[8px]">

@@ -9,9 +9,6 @@ import { CroppedImage } from "@/components/shared/CroppedImage";
 import type { CaseStudyFigure } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* 04 — What's inside. Desktop 162:1737 (1200 × 1333 mosaic + layout toggle),
-   tablet 254:304 (2 × 2), mobile 254:373 (stacked). */
-
 const FIG3_CROP = { left: "0%", top: "-5.44%", width: "100%", height: "110.88%" };
 const LABEL = cn(T.eyebrow, T.muted);
 
@@ -52,7 +49,6 @@ function ToggleIcon({ active, kind, onClick }: { active: boolean; kind: "grid" |
       aria-label={kind === "grid" ? "Two-column layout" : "Mosaic layout"}
       className="group flex size-[24px] cursor-pointer items-center justify-center"
     >
-      {/* Figma: active icon #FF4802, inactive #D6D4CC — the SVG is used as a mask so either can be active */}
       <span
         aria-hidden
         className={cn("block transition-colors", active ? "bg-[#FF4802]" : "bg-[#D6D4CC] group-hover:bg-[#F2F0E9]")}
@@ -68,7 +64,6 @@ export function CaseGallery({ figures }: { figures: CaseStudyFigure[] }) {
 
   return (
     <section className="mx-auto flex w-full flex-col gap-[24px] lg:max-w-[1200px] lg:items-center lg:gap-0 lg:pb-[40px] lg:pt-[96px]">
-      {/* ── Desktop ── */}
       <div className="hidden w-full @container lg:block">
         <div className="relative" style={mode === "mosaic" ? { height: cq(1333) } : undefined}>
           <div className="absolute right-0 top-0 z-10 flex items-center gap-[10px]">
@@ -111,7 +106,6 @@ export function CaseGallery({ figures }: { figures: CaseStudyFigure[] }) {
         MORE PROJECTS ↗
       </Link>
 
-      {/* ── Tablet / mobile ── */}
       <p className={cn(LABEL, "leading-[26px] lg:hidden")}>04 — What’s inside</p>
       <div className="grid grid-cols-1 gap-[24px] sm:grid-cols-2 lg:hidden">
         {figures.map((fig, i) => (

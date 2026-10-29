@@ -3,7 +3,6 @@ import { cn } from "@/lib/utils";
 
 export { PlayButton, RowPlayButton } from "@/components/shared/PlayButtons";
 
-/* Level / Time / Parts — the stacked layouts list them as rows (Figma colours "Parts" white) */
 export function MetaRows({
   items,
   variant,

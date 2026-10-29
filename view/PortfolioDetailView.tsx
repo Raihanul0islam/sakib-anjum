@@ -12,9 +12,6 @@ import { CaseTimeline } from "@/components/features/portfolio-detail/CaseTimelin
 import { CaseOutcome } from "@/components/features/portfolio-detail/CaseOutcome";
 import { CaseNext } from "@/components/features/portfolio-detail/CaseNext";
 
-/* Figma: desktop 162:1585 · tablet 254:256 · mobile 254:325.
-   Mobile: 24/32 padding, 48 gap · tablet: 40/48 padding, 64 gap, 656 column ·
-   desktop: each section carries its own 96/40 spacing. */
 export function PortfolioDetailView({ slug }: { slug: string }) {
   const study = getCaseStudy(slug);
   if (!study) notFound();

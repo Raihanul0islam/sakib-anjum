@@ -1,4 +1,3 @@
-/* Content for the /blogs listing (Figma "Blog · Dark" 29:370 · 257:268 · 257:356). */
 
 export type BlogCategory = "engineering" | "studio" | "clients" | "tools";
 
@@ -6,13 +5,11 @@ export const BLOG_INTRO = {
   script: "blog",
   count: "38 notes / since 2019",
   title: "Notes from a Software Engineer",
-  /** Desktop line break as set in Figma. */
   titleLines: ["Notes from a", "Software Engineer"] as [string, string],
   lead: "Notes from a small studio in a small city.",
   rest: " On building software, finding clients, and keeping both happy.",
 };
 
-/* Counts are the notebook totals shown in Figma. */
 export const BLOG_FILTERS: { key: "all" | BlogCategory; label: string; count: string }[] = [
   { key: "all", label: "All", count: "38" },
   { key: "engineering", label: "Engineering", count: "16" },
@@ -29,7 +26,6 @@ export interface BlogEssay {
   category: BlogCategory;
   meta: string;
   title: string;
-  /** Explicit line break used by the "portrait" layout (essay 02). */
   titleLines?: [string, string];
   summary: string;
   image: string;
@@ -61,7 +57,6 @@ export const BLOG_ESSAYS: BlogEssay[] = [
     slug: "the-boring-stack-is-a-feature",
     category: "engineering",
     meta: "ENGINEERING / 9 MIN READ",
-    // Title as written in Figma (repeats essay 01) — replace when final copy is ready.
     title: "Running a fifteen-person studio from Rangpur",
     summary:
       "Laravel, Postgres and a VPS still win most arguments. A note on choosing tools that let you spend more time solving the actual problem.",

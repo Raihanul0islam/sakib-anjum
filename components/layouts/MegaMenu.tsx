@@ -10,10 +10,6 @@ interface MegaMenuProps {
   onClose: () => void;
 }
 
-/* Figma Navigation/Mega menu (263:384)
-   Desktop 263:381 · Tablet 263:382 · Mobile 263:383
-   #171B18 panel, 1px #343D35 border, 12px radius, placed over the header
-   inside the page frame (16 / 24 / 20 px inset). */
 export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
   useEffect(() => {
     if (!isOpen) return;
@@ -38,7 +34,6 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
       />
 
       <div className="absolute left-[16px] right-[16px] top-[16px] flex max-h-[calc(100dvh-32px)] flex-col gap-[24px] overflow-y-auto rounded-[12px] border border-[#343D35] bg-[#171B18] p-[24px] sm:left-[24px] sm:right-[24px] sm:top-[24px] sm:max-h-[calc(100dvh-48px)] lg:left-1/2 lg:right-auto lg:top-[20px] lg:max-h-[calc(100dvh-40px)] lg:w-[calc(100%-40px)] lg:max-w-[1200px] lg:-translate-x-1/2 lg:p-[48px]">
-        {/* Menu / Header — desktop keeps Close beside the logo (24px gap) as drawn */}
         <div className="flex items-start justify-between gap-[24px] lg:justify-start">
           <Link
             href="/"
@@ -58,9 +53,7 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
           </button>
         </div>
 
-        {/* Menu / Content */}
         <div className="flex flex-col gap-[24px] lg:flex-row lg:items-start lg:gap-[48px]">
-          {/* Page links: 1 col mobile, 2 cols tablet + desktop, 8px row gap, 24px col gap */}
           <nav className="grid grid-cols-1 gap-y-[8px] sm:grid-cols-2 sm:gap-x-[24px] lg:w-[65.2174%] lg:shrink-0">
             {NAV_LINKS.map((item) => (
               <Link
@@ -82,7 +75,6 @@ export function MegaMenu({ isOpen, onClose }: MegaMenuProps) {
             ))}
           </nav>
 
-          {/* Contact panel */}
           <div className="flex min-w-0 flex-1 flex-col gap-[12px]">
             <div className="flex flex-col gap-[12px] sm:gap-[16px] lg:gap-[32px]">
               <div className="flex flex-col gap-[12px] text-[16px] leading-[21px] text-[#ABB3A9]">

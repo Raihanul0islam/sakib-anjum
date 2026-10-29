@@ -5,8 +5,6 @@ import { cq } from "@/lib/cq";
 import type { CaseStudy } from "@/constants/portfolio/case-studies";
 import { T } from "./styles";
 
-/* 03 — Approach. Desktop 162:1723 (1200 × 440: photo + overlapping card + faded 04)
-   · tablet 255:286 (side by side) · mobile 255:386 (stacked) */
 export function CaseApproach({ approach }: { approach: NonNullable<CaseStudy["approach"]> }) {
   const copy = (
     <>
@@ -28,13 +26,11 @@ export function CaseApproach({ approach }: { approach: NonNullable<CaseStudy["ap
 
   return (
     <section className="mx-auto w-full lg:max-w-[1200px] lg:pb-[40px] lg:pt-[96px]">
-      {/* Desktop */}
       <div className="hidden w-full @container lg:block">
         <div className="relative flow-root" style={{ minHeight: cq(440) }}>
           <div className="absolute left-0" style={{ top: cq(-0.25), width: cq(489), height: cq(440) }}>
             <Image src={approach.image} alt={approach.title} fill sizes="489px" className="object-cover" />
           </div>
-          {/* Card hangs 2.75px below the 440 box in Figma without adding height */}
           <div
             className="relative flex flex-col gap-[20px] px-[24px] py-[32px]"
             style={{ marginLeft: cq(446), marginTop: cq(42.75), marginBottom: cq(-2.75), width: cq(540) }}
@@ -52,7 +48,6 @@ export function CaseApproach({ approach }: { approach: NonNullable<CaseStudy["ap
         </div>
       </div>
 
-      {/* Tablet / mobile */}
       <div className="flex flex-col gap-[24px] sm:flex-row sm:items-start lg:hidden">
         <div className="relative w-full shrink-0 aspect-[326/290] sm:w-[48.17%] sm:aspect-[316/360]">
           <Image src={approach.image} alt={approach.title} fill sizes="(min-width: 576px) 316px, 100vw" className="object-cover" />
